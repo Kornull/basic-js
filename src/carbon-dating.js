@@ -21,9 +21,10 @@ function dateSample(sampleActivity) {
   let a;
   if (parseFloat(sampleActivity) === Number()) {
     a = parseFloat(sampleActivity);
-    if (a > 0 && a < 15) {
-      return Math.ceil(MODERN_ACTIVITY / a) / (0.693 / HALF_LIFE_PERIOD)
+    if (a > 0 && a < MODERN_ACTIVITY) {
+      return Math.ceil((MODERN_ACTIVITY / a) / (0.693 / HALF_LIFE_PERIOD) * (10**3))
     }
+    return false
   }
   return false
 }
