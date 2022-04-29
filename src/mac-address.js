@@ -17,7 +17,9 @@ const { NotImplementedError } = require('../extensions/index.js');
 function isMAC48Address(n) {
   let notAdress = 'GHIJKLMNOPQRSTUVWXYZ'.split('')
   for (i of notAdress) {
-    if (n.includes(i)) return false;
+    for (let j = 0; j < n.length; j++) {
+      if (n[j]===i) return false;
+    }
   }
   return true
 }
