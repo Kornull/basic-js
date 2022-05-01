@@ -20,7 +20,6 @@ class DepthCalculator {
         if (Array.isArray(arr[i])) {
           count++;
           return calculateDepth(arr[i], count)
-
         }
         return  count;
       }
